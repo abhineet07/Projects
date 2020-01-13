@@ -3,10 +3,11 @@ from django.shortcuts import render
 
 def index(request):
 	# return HttpResponse("Home ")
-	params = {'name': 'abhineet', 'place': 'bulandshahr'}
-	return render(request, 'index.html', params)
+	return render(request, 'index.html')
 
 def removepunc(request):
+	djtext = request.GET.get('text', 'default')
+	print(djtext)
 	return HttpResponse('''remove punc <a href="/"> Go Back </a>''')
 
 def capfirst(request):
